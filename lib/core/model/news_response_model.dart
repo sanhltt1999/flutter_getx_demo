@@ -9,7 +9,7 @@ class NewsResponse {
   String status;
 
   @JsonKey(name: "totalResults")
-  String totalResults;
+  int totalResults;
 
   @JsonKey(name: "articles")
   List<Article> articles;

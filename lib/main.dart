@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(
           name: "/news_headline",
-          page: () => const NewHeadLineView(),
+          page: () => NewHeadLineView(),
           binding: NewsHeadlineBinding(),
         ),
         GetPage(
