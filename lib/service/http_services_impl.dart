@@ -15,6 +15,9 @@ class HttpServiceImpl implements HttpService {
     } on DioError catch (e) {
       print(e.message);
       throw Exception(e.message);
+    } on Exception catch (e) {
+      print(e);
+      throw Exception(e);
     }
     return response;
   }

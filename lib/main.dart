@@ -7,6 +7,7 @@ import 'package:getx/feature/search_news/view/search_news_view.dart';
 
 void main() {
   runApp(const MyApp());
+
 }
 
 class MyApp extends StatelessWidget {

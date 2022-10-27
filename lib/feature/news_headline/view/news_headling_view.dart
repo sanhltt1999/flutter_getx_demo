@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get.dart';
 import 'package:getx/core/widget/drawer.dart';
 import 'package:getx/feature/news_headline/controller/news_headline_controller.dart';
 
