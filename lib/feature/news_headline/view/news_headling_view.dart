@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:getx/core/widget/drawer.dart';
 
 class NewHeadLineView extends StatelessWidget {
@@ -12,6 +13,7 @@ class NewHeadLineView extends StatelessWidget {
         appBar: AppBar(
           title: const Text("News Headline"),
         ),
-        drawer: getAppDrawer());
+        drawer: getAppDrawer(),
+        body: Obx(),);
   }
 }

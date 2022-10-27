@@ -15,21 +15,27 @@ class HttpServiceImpl implements HttpService {
     } on DioError catch (e) {
       print(e.message);
       throw Exception(e.message);
+    } on Exception catch (e) {
+      print(e);
+      throw Exception(e);
     }
     return response;
   }
 
   initializeInterceptor() {
     _dio.interceptors.add(InterceptorsWrapper(
-      onError: (e, handler) {
-        print(e.message);
-      },
-      onRequest: (options, handler) {
-        print("${options.method} | ${options.path}");
-      },
-      onResponse: (e, handler) {
-        print("${e.statusCode} ${e.statusMessage} ${e.data}");
-      },
+        onRequest:(options, handler){
+          print("${options.method} | ${options.path}");
+          return handler.next(options); //continue
+        },
+        onResponse:(response,handler) {
+          print("${response.statusCode} ${response.statusMessage} ${response.data}");
+          return handler.next(response); // continue
+        },
+        onError: (DioError e, handler) {
+          print(e.message);
+          return  handler.next(e);//continue
+        }
     ));
   }
 
